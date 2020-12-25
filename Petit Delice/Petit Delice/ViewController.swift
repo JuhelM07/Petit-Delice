@@ -55,12 +55,12 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             if let vc = segue.destination as? CreateOrderViewController {
                 vc.getDateFromMain = dateSelected
                 
-                if let drawer = self.parentViewController as? PulleyViewController
-                {
-                    let drawerContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DrawerContentViewController")
-
-                    drawer.setDrawerContentViewController(drawerContent, animated: false)
-                }
+//                if let drawer = self.parentViewController as? PulleyViewController
+//                {
+//                    let drawerContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DrawerContentViewController")
+//
+//                    drawer.setDrawerContentViewController(drawerContent, animated: false)
+//                }
                 
             }
         }

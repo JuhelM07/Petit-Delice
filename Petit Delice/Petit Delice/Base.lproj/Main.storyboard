@@ -483,22 +483,22 @@
     </scenes>
     <designables>
         <designable name="0E7-j6-kKy">
-            <size key="intrinsicContentSize" width="74.5" height="36.060000000000002"/>
+            <size key="intrinsicContentSize" width="102.5" height="34"/>
         </designable>
         <designable name="1Zo-J0-6rw">
-            <size key="intrinsicContentSize" width="150.5" height="36.060000000000002"/>
+            <size key="intrinsicContentSize" width="178.5" height="34"/>
         </designable>
         <designable name="azl-jS-Vlf">
-            <size key="intrinsicContentSize" width="71" height="36.060000000000002"/>
+            <size key="intrinsicContentSize" width="99" height="34"/>
         </designable>
         <designable name="bJ1-Lp-bcF">
-            <size key="intrinsicContentSize" width="44" height="36.060000000000002"/>
+            <size key="intrinsicContentSize" width="72" height="34"/>
         </designable>
         <designable name="nD5-cZ-FyS">
-            <size key="intrinsicContentSize" width="94" height="36.060000000000002"/>
+            <size key="intrinsicContentSize" width="122" height="34"/>
         </designable>
         <designable name="zY1-De-akB">
-            <size key="intrinsicContentSize" width="91.5" height="36.060000000000002"/>
+            <size key="intrinsicContentSize" width="119.5" height="34"/>
         </designable>
     </designables>
     <resources>

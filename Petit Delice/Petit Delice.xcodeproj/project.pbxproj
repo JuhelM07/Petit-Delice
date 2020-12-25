@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2588C3B72594FAE900923C81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2588C3B62594FAE900923C81 /* GoogleService-Info.plist */; };
 		2588C3BF259505C100923C81 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C3BE259505C100923C81 /* Order.swift */; };
 		2588C3FD2595424100923C81 /* DeadlinesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */; };
+		2588C41325956DA000923C81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2588C41225956DA000923C81 /* GoogleService-Info.plist */; };
 		25A17D772594D1180084E3DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D762594D1180084E3DE /* AppDelegate.swift */; };
 		25A17D792594D1180084E3DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D782594D1180084E3DE /* SceneDelegate.swift */; };
 		25A17D7B2594D1180084E3DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D7A2594D1180084E3DE /* ViewController.swift */; };
@@ -21,9 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2588C3B62594FAE900923C81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2588C3BE259505C100923C81 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinesCollectionViewCell.swift; sourceTree = "<group>"; };
+		2588C41225956DA000923C81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		25A17D732594D1180084E3DE /* Petit Delice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Petit Delice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25A17D762594D1180084E3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25A17D782594D1180084E3DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,9 +87,9 @@
 				25A17D812594D11D0084E3DE /* LaunchScreen.storyboard */,
 				25A17D842594D11D0084E3DE /* Info.plist */,
 				25A17DB82594ED170084E3DE /* CreateOrderViewController.swift */,
-				2588C3B62594FAE900923C81 /* GoogleService-Info.plist */,
 				2588C3BE259505C100923C81 /* Order.swift */,
 				2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */,
+				2588C41225956DA000923C81 /* GoogleService-Info.plist */,
 			);
 			path = "Petit Delice";
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25A17D832594D11D0084E3DE /* LaunchScreen.storyboard in Resources */,
-				2588C3B72594FAE900923C81 /* GoogleService-Info.plist in Resources */,
+				2588C41325956DA000923C81 /* GoogleService-Info.plist in Resources */,
 				25A17D802594D11D0084E3DE /* Assets.xcassets in Resources */,
 				25A17D7E2594D1180084E3DE /* Main.storyboard in Resources */,
 			);

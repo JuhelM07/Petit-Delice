@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>905175318310-sh8kh47p7hfltb6t1v93a14j92oobscr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.905175318310-sh8kh47p7hfltb6t1v93a14j92oobscr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAiOPHEVi4zMHgRpVY3IyRhVpoDElZSs9E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>905175318310</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.juhelmiah.Petit-Delice</string>
+	<key>PROJECT_ID</key>
+	<string>petit-delice</string>
+	<key>STORAGE_BUCKET</key>
+	<string>petit-delice.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:905175318310:ios:a6ed6673ddd64d37a0cbe7</string>
+	<key>DATABASE_URL</key>
+	<string>https://petit-delice-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
