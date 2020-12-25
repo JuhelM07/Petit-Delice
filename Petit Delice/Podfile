@@ -1,0 +1,15 @@
+platform :ios, '9.0'
+
+target 'Petit Delice' do
+  use_frameworks!
+  pod "MaterialTextField"
+  pod "FSCalendar"
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  pod 'Firebase/Core'
+  pod 'CodableFirebase'
+  pod 'IQKeyboardManager', '~> 6.5'
+  pod 'Pulley', '~> 2.9'
+  
+
+end

@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2588C3B72594FAE900923C81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2588C3B62594FAE900923C81 /* GoogleService-Info.plist */; };
+		2588C3BF259505C100923C81 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C3BE259505C100923C81 /* Order.swift */; };
+		2588C3FD2595424100923C81 /* DeadlinesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */; };
+		25A17D772594D1180084E3DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D762594D1180084E3DE /* AppDelegate.swift */; };
+		25A17D792594D1180084E3DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D782594D1180084E3DE /* SceneDelegate.swift */; };
+		25A17D7B2594D1180084E3DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D7A2594D1180084E3DE /* ViewController.swift */; };
+		25A17D7E2594D1180084E3DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A17D7C2594D1180084E3DE /* Main.storyboard */; };
+		25A17D802594D11D0084E3DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25A17D7F2594D11D0084E3DE /* Assets.xcassets */; };
+		25A17D832594D11D0084E3DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A17D812594D11D0084E3DE /* LaunchScreen.storyboard */; };
+		25A17DB92594ED170084E3DE /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17DB82594ED170084E3DE /* CreateOrderViewController.swift */; };
+		3C652C2E1BBB75B4E82C239D /* Pods_Petit_Delice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2AB6868C2BD2FAADD12FC3 /* Pods_Petit_Delice.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2588C3B62594FAE900923C81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2588C3BE259505C100923C81 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinesCollectionViewCell.swift; sourceTree = "<group>"; };
+		25A17D732594D1180084E3DE /* Petit Delice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Petit Delice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A17D762594D1180084E3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25A17D782594D1180084E3DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		25A17D7A2594D1180084E3DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		25A17D7D2594D1180084E3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25A17D7F2594D11D0084E3DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25A17D822594D11D0084E3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25A17D842594D11D0084E3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25A17DB82594ED170084E3DE /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
+		CE2AB6868C2BD2FAADD12FC3 /* Pods_Petit_Delice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petit_Delice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A8D47C96798CC31DADB74F /* Pods-Petit Delice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petit Delice.release.xcconfig"; path = "Target Support Files/Pods-Petit Delice/Pods-Petit Delice.release.xcconfig"; sourceTree = "<group>"; };
+		FF6796E4E3E641845E0606BC /* Pods-Petit Delice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petit Delice.debug.xcconfig"; path = "Target Support Files/Pods-Petit Delice/Pods-Petit Delice.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25A17D702594D1180084E3DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C652C2E1BBB75B4E82C239D /* Pods_Petit_Delice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		108145988E1CF0A8957D2F3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AB6868C2BD2FAADD12FC3 /* Pods_Petit_Delice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25A17D6A2594D1180084E3DE = {
+			isa = PBXGroup;
+			children = (
+				25A17D752594D1180084E3DE /* Petit Delice */,
+				25A17D742594D1180084E3DE /* Products */,
+				DEEE52DECE2F390D2BDD4902 /* Pods */,
+				108145988E1CF0A8957D2F3D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		25A17D742594D1180084E3DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25A17D732594D1180084E3DE /* Petit Delice.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25A17D752594D1180084E3DE /* Petit Delice */ = {
+			isa = PBXGroup;
+			children = (
+				25A17D762594D1180084E3DE /* AppDelegate.swift */,
+				25A17D782594D1180084E3DE /* SceneDelegate.swift */,
+				25A17D7A2594D1180084E3DE /* ViewController.swift */,
+				25A17D7C2594D1180084E3DE /* Main.storyboard */,
+				25A17D7F2594D11D0084E3DE /* Assets.xcassets */,
+				25A17D812594D11D0084E3DE /* LaunchScreen.storyboard */,
+				25A17D842594D11D0084E3DE /* Info.plist */,
+				25A17DB82594ED170084E3DE /* CreateOrderViewController.swift */,
+				2588C3B62594FAE900923C81 /* GoogleService-Info.plist */,
+				2588C3BE259505C100923C81 /* Order.swift */,
+				2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */,
+			);
+			path = "Petit Delice";
+			sourceTree = "<group>";
+		};
+		DEEE52DECE2F390D2BDD4902 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF6796E4E3E641845E0606BC /* Pods-Petit Delice.debug.xcconfig */,
+				F7A8D47C96798CC31DADB74F /* Pods-Petit Delice.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25A17D722594D1180084E3DE /* Petit Delice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A17D872594D11D0084E3DE /* Build configuration list for PBXNativeTarget "Petit Delice" */;
+			buildPhases = (
+				B4C00E76C3A39DFBFC0EB745 /* [CP] Check Pods Manifest.lock */,
+				25A17D6F2594D1180084E3DE /* Sources */,
+				25A17D702594D1180084E3DE /* Frameworks */,
+				25A17D712594D1180084E3DE /* Resources */,
+				6C2B3040314E733403AA197F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Petit Delice";
+			productName = "Petit Delice";
+			productReference = 25A17D732594D1180084E3DE /* Petit Delice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25A17D6B2594D1180084E3DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					25A17D722594D1180084E3DE = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 25A17D6E2594D1180084E3DE /* Build configuration list for PBXProject "Petit Delice" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25A17D6A2594D1180084E3DE;
+			productRefGroup = 25A17D742594D1180084E3DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25A17D722594D1180084E3DE /* Petit Delice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25A17D712594D1180084E3DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A17D832594D11D0084E3DE /* LaunchScreen.storyboard in Resources */,
+				2588C3B72594FAE900923C81 /* GoogleService-Info.plist in Resources */,
+				25A17D802594D11D0084E3DE /* Assets.xcassets in Resources */,
+				25A17D7E2594D1180084E3DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C2B3040314E733403AA197F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Petit Delice/Pods-Petit Delice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Petit Delice/Pods-Petit Delice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Petit Delice/Pods-Petit Delice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4C00E76C3A39DFBFC0EB745 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Petit Delice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25A17D6F2594D1180084E3DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A17D7B2594D1180084E3DE /* ViewController.swift in Sources */,
+				25A17DB92594ED170084E3DE /* CreateOrderViewController.swift in Sources */,
+				2588C3BF259505C100923C81 /* Order.swift in Sources */,
+				25A17D772594D1180084E3DE /* AppDelegate.swift in Sources */,
+				2588C3FD2595424100923C81 /* DeadlinesCollectionViewCell.swift in Sources */,
+				25A17D792594D1180084E3DE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		25A17D7C2594D1180084E3DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25A17D7D2594D1180084E3DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25A17D812594D11D0084E3DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25A17D822594D11D0084E3DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25A17D852594D11D0084E3DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		25A17D862594D11D0084E3DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25A17D882594D11D0084E3DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF6796E4E3E641845E0606BC /* Pods-Petit Delice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6S3RGF89R7;
+				INFOPLIST_FILE = "Petit Delice/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.juhelmiah.Petit-Delice";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		25A17D892594D11D0084E3DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7A8D47C96798CC31DADB74F /* Pods-Petit Delice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6S3RGF89R7;
+				INFOPLIST_FILE = "Petit Delice/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.juhelmiah.Petit-Delice";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25A17D6E2594D1180084E3DE /* Build configuration list for PBXProject "Petit Delice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A17D852594D11D0084E3DE /* Debug */,
+				25A17D862594D11D0084E3DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A17D872594D11D0084E3DE /* Build configuration list for PBXNativeTarget "Petit Delice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A17D882594D11D0084E3DE /* Debug */,
+				25A17D892594D11D0084E3DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25A17D6B2594D1180084E3DE /* Project object */;
+}
