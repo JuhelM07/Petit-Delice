@@ -55,13 +55,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             if let vc = segue.destination as? CreateOrderViewController {
                 vc.getDateFromMain = dateSelected
                 
-//                if let drawer = self.parentViewController as? PulleyViewController
-//                {
-//                    let drawerContent = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DrawerContentViewController")
-//
-//                    drawer.setDrawerContentViewController(drawerContent, animated: false)
-//                }
-                
             }
         }
     }
@@ -136,9 +129,13 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateString = self.dateFormatter.string(from: date)
-        
-        
         dateSelected = dateString
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let dayOrdersVC = storyBoard.instantiateViewController(withIdentifier: "DayOrdersViewController") as! DayOrdersViewController
+        self.present(dayOrdersVC, animated: true, completion: nil)
+        
+        
     }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
