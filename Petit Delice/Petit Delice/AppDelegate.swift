@@ -10,6 +10,7 @@ import Firebase
 import IQKeyboardManager
 
 //@main
+//TEST
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
