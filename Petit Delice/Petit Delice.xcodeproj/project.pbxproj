@@ -11,7 +11,6 @@
 		2588C3FD2595424100923C81 /* DeadlinesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */; };
 		2588C41325956DA000923C81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2588C41225956DA000923C81 /* GoogleService-Info.plist */; };
 		2588C41B2598ED9A00923C81 /* DayOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C41A2598ED9A00923C81 /* DayOrdersViewController.swift */; };
-		25A17D772594D1180084E3DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D762594D1180084E3DE /* AppDelegate.swift */; };
 		25A17D792594D1180084E3DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D782594D1180084E3DE /* SceneDelegate.swift */; };
 		25A17D7B2594D1180084E3DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D7A2594D1180084E3DE /* ViewController.swift */; };
 		25A17D7E2594D1180084E3DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A17D7C2594D1180084E3DE /* Main.storyboard */; };
@@ -19,6 +18,8 @@
 		25A17D832594D11D0084E3DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A17D812594D11D0084E3DE /* LaunchScreen.storyboard */; };
 		25A17DB92594ED170084E3DE /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17DB82594ED170084E3DE /* CreateOrderViewController.swift */; };
 		3C652C2E1BBB75B4E82C239D /* Pods_Petit_Delice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2AB6868C2BD2FAADD12FC3 /* Pods_Petit_Delice.framework */; };
+		C528ADFB25990A5F0074072C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D762594D1180084E3DE /* AppDelegate.swift */; };
+		C528ADFD259912A50074072C /* DayOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C528ADFC259912A50074072C /* DayOrdersTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		25A17D822594D11D0084E3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25A17D842594D11D0084E3DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25A17DB82594ED170084E3DE /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
+		C528ADFC259912A50074072C /* DayOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOrdersTableViewCell.swift; sourceTree = "<group>"; };
 		CE2AB6868C2BD2FAADD12FC3 /* Pods_Petit_Delice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petit_Delice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A8D47C96798CC31DADB74F /* Pods-Petit Delice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petit Delice.release.xcconfig"; path = "Target Support Files/Pods-Petit Delice/Pods-Petit Delice.release.xcconfig"; sourceTree = "<group>"; };
 		FF6796E4E3E641845E0606BC /* Pods-Petit Delice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petit Delice.debug.xcconfig"; path = "Target Support Files/Pods-Petit Delice/Pods-Petit Delice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */,
+				C528ADFC259912A50074072C /* DayOrdersTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -257,9 +260,10 @@
 				25A17DB92594ED170084E3DE /* CreateOrderViewController.swift in Sources */,
 				2588C41B2598ED9A00923C81 /* DayOrdersViewController.swift in Sources */,
 				2588C3BF259505C100923C81 /* Order.swift in Sources */,
-				25A17D772594D1180084E3DE /* AppDelegate.swift in Sources */,
+				C528ADFB25990A5F0074072C /* AppDelegate.swift in Sources */,
 				2588C3FD2595424100923C81 /* DeadlinesCollectionViewCell.swift in Sources */,
 				25A17D792594D1180084E3DE /* SceneDelegate.swift in Sources */,
+				C528ADFD259912A50074072C /* DayOrdersTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

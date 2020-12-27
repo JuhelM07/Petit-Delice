@@ -135,3 +135,33 @@ extension CreateOrderViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     
     
 }
+
+extension CreateOrderViewController: UITextFieldDelegate{
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == cakeTypeTextField{
+            let index = cakeTypePicker.selectedRow(inComponent: 0)
+            if index == 0 {
+                cakeTypeTextField.text = cakeTypeData.first
+            }
+            
+
+        } else if textField == cakeSizeTextField{
+            let index = cakeSizePicker.selectedRow(inComponent: 0)
+            if index == 0 {
+                cakeSizeTextField.text = cakeSizeData.first
+            }
+        } else if textField == cakeFlavourTextField{
+            let index = cakeFlavourPicker.selectedRow(inComponent: 0)
+            if index == 0 {
+                cakeFlavourTextField.text = cakeFlavourData.first
+            }
+        }
+        
+        
+        
+        
+        
+    }
+    
+}

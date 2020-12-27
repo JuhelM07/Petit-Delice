@@ -9,7 +9,8 @@ import UIKit
 import Firebase
 import IQKeyboardManager
 
-@main
+//@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?

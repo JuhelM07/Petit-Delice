@@ -96,13 +96,13 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                 do {
                     let order = try FirebaseDecoder().decode(OrderDetails.self, from: userDict)
                     self.orderDetails.append(order)
-                    mainCalendar.reloadData()
+                    self.mainCalendar.reloadData()
                 } catch let error {
                     print(error)
                 }
             }
-            calculateDeadlines()
-            print("Order Array: \(orderDetails.count)")
+            self.calculateDeadlines()
+            print("Order Array: \(self.orderDetails.count)")
         }
     }
     
@@ -130,10 +130,26 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateString = self.dateFormatter.string(from: date)
         dateSelected = dateString
+        var ordersForDate = [OrderDetails]()
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let dayOrdersVC = storyBoard.instantiateViewController(withIdentifier: "DayOrdersViewController") as! DayOrdersViewController
-        self.present(dayOrdersVC, animated: true, completion: nil)
+        for order in orderDetails {
+            if order.deliveryDate == dateString {
+                print("There are orders for \(order.deliveryDate)")
+                ordersForDate.append(order)
+            }
+        }
+   // doesnt open modal for no order dates
+        for date in ordersForDate{
+            if date.deliveryDate == dateString{
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let dayOrdersVC = storyBoard.instantiateViewController(withIdentifier: "DayOrdersViewController") as! DayOrdersViewController
+                dayOrdersVC.orderDetails = ordersForDate
+                self.present(dayOrdersVC, animated: true, completion: nil)
+                break
+            }
+        }
+        
+
         
         
     }
