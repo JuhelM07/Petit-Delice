@@ -85,7 +85,9 @@ class CreateOrderViewController: UIViewController {
             "cake_size_or_quantity": cakeSizeTextField.text as! NSObject,
             "cake_flavour": cakeFlavourTextField.text! as NSObject,
             "gift_box_sweet_treats": giftBoxSweetTreatsSwitch.isOn as NSObject,
-            "additional_information": additionalInformationTextView.text as NSObject
+            "additional_information": additionalInformationTextView.text as NSObject,
+            "customer_reference": orderString as NSObject
+            
         ]
         
         database.child("orders").child("\(orderString)").setValue(customerObject)

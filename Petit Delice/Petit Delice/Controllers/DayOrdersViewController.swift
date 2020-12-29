@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol DayOrdersViewControllerDelegate {
+    func goToOrderDetails(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String)
+}
+
 class DayOrdersViewController: UIViewController {
     
     @IBOutlet weak var ordersView: UIView!
     @IBOutlet weak var ordersTableView: UITableView!
     
     var orderDetails = [OrderDetails]()
+    var delegate: DayOrdersViewControllerDelegate?
     
     
     override func viewDidLoad() {
@@ -59,6 +64,12 @@ extension DayOrdersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor(red: 255, green: 236, blue: 252, alpha: 0)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dailyOrder = orderDetails[indexPath.row]
+        dismiss(animated: false, completion: nil)
+        delegate?.goToOrderDetails(customerName: dailyOrder.customerName, customerInstagram: dailyOrder.instagramUsername, deliveryDate: dailyOrder.deliveryDate, cakeType: dailyOrder.cakeType, cakeSize: dailyOrder.cakeSizeQuantity, cakeFlavour: dailyOrder.cakeFlavour, giftBoxSweetTreats: dailyOrder.giftBoxSweetTreats, additionalInfo: dailyOrder.additionalInformation, customerReference: dailyOrder.customerReference)
     }
     
     

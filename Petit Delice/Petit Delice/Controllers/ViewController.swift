@@ -143,6 +143,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             if date.deliveryDate == dateString{
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let dayOrdersVC = storyBoard.instantiateViewController(withIdentifier: "DayOrdersViewController") as! DayOrdersViewController
+                dayOrdersVC.delegate = self
                 dayOrdersVC.orderDetails = ordersForDate
                 self.present(dayOrdersVC, animated: true, completion: nil)
                 break
@@ -212,6 +213,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         orderDetailsVC.getCakeFlavour = deadlineInfo.cakeFlavour
         orderDetailsVC.getGiftBoxSweetTreats = deadlineInfo.giftBoxSweetTreats
         orderDetailsVC.getAdditionalInformation = deadlineInfo.additionalInformation
+        orderDetailsVC.getCustomerReference = deadlineInfo.customerReference
         
         self.navigationController?.pushViewController(orderDetailsVC, animated: true)
     }
@@ -223,4 +225,26 @@ extension Date {
         return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     }
 
+}
+
+extension ViewController: DayOrdersViewControllerDelegate {
+    func goToOrderDetails(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let orderDetailsVC = storyBoard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as! OrderDetailsViewController
+        
+        orderDetailsVC.getCustomerName = customerName
+        orderDetailsVC.getCustomerInstagram = customerInstagram
+        orderDetailsVC.getDeliveryDate = deliveryDate
+        orderDetailsVC.getCakeType = cakeType
+        orderDetailsVC.getCakeSize = cakeSize
+        orderDetailsVC.getCakeFlavour = cakeFlavour
+        orderDetailsVC.getGiftBoxSweetTreats = giftBoxSweetTreats
+        orderDetailsVC.getAdditionalInformation = additionalInfo
+        orderDetailsVC.getCustomerReference = customerReference
+        
+        self.navigationController?.pushViewController(orderDetailsVC, animated: true)
+    }
+    
+    
 }
