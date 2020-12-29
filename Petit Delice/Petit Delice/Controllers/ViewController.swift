@@ -197,6 +197,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         // Configure the cell
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let deadlineInfo = deadlinesDates[indexPath.row]
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let orderDetailsVC = storyBoard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as! OrderDetailsViewController
+        
+        orderDetailsVC.getCustomerName = deadlineInfo.customerName
+        orderDetailsVC.getCustomerInstagram = deadlineInfo.instagramUsername
+        orderDetailsVC.getDeliveryDate = deadlineInfo.deliveryDate
+        orderDetailsVC.getCakeType = deadlineInfo.cakeType
+        orderDetailsVC.getCakeSize = deadlineInfo.cakeSizeQuantity
+        orderDetailsVC.getCakeFlavour = deadlineInfo.cakeFlavour
+        orderDetailsVC.getGiftBoxSweetTreats = deadlineInfo.giftBoxSweetTreats
+        orderDetailsVC.getAdditionalInformation = deadlineInfo.additionalInformation
+        
+        self.navigationController?.pushViewController(orderDetailsVC, animated: true)
+    }
 }
 
 extension Date {

@@ -11,6 +11,7 @@
 		2588C3FD2595424100923C81 /* DeadlinesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */; };
 		2588C41325956DA000923C81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2588C41225956DA000923C81 /* GoogleService-Info.plist */; };
 		2588C41B2598ED9A00923C81 /* DayOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C41A2598ED9A00923C81 /* DayOrdersViewController.swift */; };
+		2588C420259B6DC500923C81 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C41F259B6DC500923C81 /* OrderDetailsViewController.swift */; };
 		25A17D792594D1180084E3DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D782594D1180084E3DE /* SceneDelegate.swift */; };
 		25A17D7B2594D1180084E3DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A17D7A2594D1180084E3DE /* ViewController.swift */; };
 		25A17D7E2594D1180084E3DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A17D7C2594D1180084E3DE /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinesCollectionViewCell.swift; sourceTree = "<group>"; };
 		2588C41225956DA000923C81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2588C41A2598ED9A00923C81 /* DayOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOrdersViewController.swift; sourceTree = "<group>"; };
+		2588C41F259B6DC500923C81 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		25A17D732594D1180084E3DE /* Petit Delice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Petit Delice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25A17D762594D1180084E3DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25A17D782594D1180084E3DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				25A17DB82594ED170084E3DE /* CreateOrderViewController.swift */,
 				2588C41A2598ED9A00923C81 /* DayOrdersViewController.swift */,
 				2588C4172598ECD500923C81 /* Cells */,
+				2588C41F259B6DC500923C81 /* OrderDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				25A17D7B2594D1180084E3DE /* ViewController.swift in Sources */,
 				25A17DB92594ED170084E3DE /* CreateOrderViewController.swift in Sources */,
+				2588C420259B6DC500923C81 /* OrderDetailsViewController.swift in Sources */,
 				2588C41B2598ED9A00923C81 /* DayOrdersViewController.swift in Sources */,
 				2588C3BF259505C100923C81 /* Order.swift in Sources */,
 				C528ADFB25990A5F0074072C /* AppDelegate.swift in Sources */,
