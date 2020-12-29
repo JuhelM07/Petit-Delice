@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import MaterialTextField
+
 
 class OrderDetailsViewController: UITableViewController {
     
@@ -17,6 +19,18 @@ class OrderDetailsViewController: UITableViewController {
     @IBOutlet weak var cakeFlavourLabel: UILabel!
     @IBOutlet weak var giftBoxSweetTreatsLabel: UILabel!
     @IBOutlet weak var additionalInfoLabel: UILabel!
+    
+    
+    @IBOutlet weak var customerNameTF: MFTextField!
+    @IBOutlet weak var customerInstagramTF: MFTextField!
+    @IBOutlet weak var deliveryDateTF: MFTextField!
+    @IBOutlet weak var cakeTypeTF: MFTextField!
+    @IBOutlet weak var cakeSizeTF: MFTextField!
+    @IBOutlet weak var cakeFlavourTF: MFTextField!
+    @IBOutlet weak var giftBoxSweetTreatsSwitch: UISwitch!
+    @IBOutlet weak var additionalInfoTextView: UITextView!
+    
+    
     
     var getCustomerName = String()
     var getCustomerInstagram = String()
@@ -30,7 +44,30 @@ class OrderDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUIForDetails()
+        setUpTextFieldsForUI()
     }
+    
+    func setUpTextFieldsForUI(){
+        customerNameTF.text = getCustomerName
+        customerInstagramTF.text = getCustomerInstagram
+        deliveryDateTF.text = getDeliveryDate
+        cakeTypeTF.text = getCakeType
+        cakeSizeTF.text = getCakeSize
+        cakeFlavourTF.text = getCakeFlavour
+        
+        
+        if getGiftBoxSweetTreats == true {
+            giftBoxSweetTreatsSwitch.isOn = true
+            
+        } else {
+            giftBoxSweetTreatsSwitch.isOn = false
+        }
+   
+
+        
+        additionalInfoTextView.text = getAdditionalInformation
+    }
+    
     
     func setUpUIForDetails() {
         customerNameLabel.text = getCustomerName
@@ -61,7 +98,7 @@ class OrderDetailsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 18
     }
 
 }
