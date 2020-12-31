@@ -21,6 +21,7 @@ struct OrderDetails: Codable {
     let giftBoxSweetTreats: Bool
     let additionalInformation: String
     let customerReference: String
+    let createdAt: String
     
     init?(data: [String: Any]) {
         
@@ -32,7 +33,8 @@ struct OrderDetails: Codable {
             let cakeFlavour = data["cake_flavour"] as? String,
             let giftBoxSweetTreats = data["gift_box_sweet_treats"] as? Bool,
             let additionalInformation = data["additional_information"] as? String,
-            let customerReference = data["customer_reference"] as? String else {
+            let customerReference = data["customer_reference"] as? String,
+            let createdAt = data["created_at"] as? String else {
                 return nil
         }
         
@@ -46,6 +48,7 @@ struct OrderDetails: Codable {
         self.giftBoxSweetTreats = giftBoxSweetTreats
         self.additionalInformation = additionalInformation
         self.customerReference = customerReference
+        self.createdAt = createdAt
     }
     
     enum CodingKeys: String, CodingKey {
@@ -58,6 +61,7 @@ struct OrderDetails: Codable {
         case giftBoxSweetTreats = "gift_box_sweet_treats"
         case additionalInformation = "additional_information"
         case customerReference = "customer_reference"
+        case createdAt = "created_at"
     }
     
 }

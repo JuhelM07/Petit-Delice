@@ -117,8 +117,8 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             if date != nil {
                 let delta = date! - Date()
                 let days = delta / 86400
-                
-                if days > 0 && days <= 7 {
+                print("Days: \(days)")
+                if days >= -1 && days <= 7 {
                     self.deadlinesDates.append(order)
                 }
             }
@@ -156,6 +156,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        datesArray.removeAll()
         
         let dateString = self.dateFormatter.string(from: date)
         
@@ -214,6 +215,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         orderDetailsVC.getGiftBoxSweetTreats = deadlineInfo.giftBoxSweetTreats
         orderDetailsVC.getAdditionalInformation = deadlineInfo.additionalInformation
         orderDetailsVC.getCustomerReference = deadlineInfo.customerReference
+        orderDetailsVC.getCreatedAt = deadlineInfo.createdAt
         
         self.navigationController?.pushViewController(orderDetailsVC, animated: true)
     }
@@ -228,7 +230,7 @@ extension Date {
 }
 
 extension ViewController: DayOrdersViewControllerDelegate {
-    func goToOrderDetails(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String) {
+    func goToOrderDetails(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String, createdAt: String) {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let orderDetailsVC = storyBoard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as! OrderDetailsViewController
@@ -242,6 +244,7 @@ extension ViewController: DayOrdersViewControllerDelegate {
         orderDetailsVC.getGiftBoxSweetTreats = giftBoxSweetTreats
         orderDetailsVC.getAdditionalInformation = additionalInfo
         orderDetailsVC.getCustomerReference = customerReference
+        orderDetailsVC.getCreatedAt = createdAt
         
         self.navigationController?.pushViewController(orderDetailsVC, animated: true)
     }

@@ -77,6 +77,11 @@ class CreateOrderViewController: UIViewController {
     }
     
     func addNewOrder(orderString: String) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
+        let date = dateFormatter.string(from: Date())
+        
         let customerObject: [String: Any] = [
             "customer_name": customerNameTextField.text as! NSObject,
             "instagram_username": customerInstagramTextField.text as! NSObject,
@@ -86,8 +91,8 @@ class CreateOrderViewController: UIViewController {
             "cake_flavour": cakeFlavourTextField.text! as NSObject,
             "gift_box_sweet_treats": giftBoxSweetTreatsSwitch.isOn as NSObject,
             "additional_information": additionalInformationTextView.text as NSObject,
-            "customer_reference": orderString as NSObject
-            
+            "customer_reference": orderString as NSObject,
+            "created_at": date as NSObject
         ]
         
         database.child("orders").child("\(orderString)").setValue(customerObject)

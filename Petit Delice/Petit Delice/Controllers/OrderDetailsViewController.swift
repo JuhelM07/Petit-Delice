@@ -48,9 +48,13 @@ class OrderDetailsViewController: UITableViewController {
     var getGiftBoxSweetTreats = Bool()
     var getAdditionalInformation = String()
     var getCustomerReference = String()
+    var getCreatedAt = String()
     
     
     var isInEditMode = false
+    var cameFromArchive = false
+    
+    
     let cakeTypePicker = UIPickerView()
     let cakeSizePicker = UIPickerView()
     let cakeFlavourPicker = UIPickerView()
@@ -67,12 +71,79 @@ class OrderDetailsViewController: UITableViewController {
     }
     
     func setupNavigationBar(){
-        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTapped))
-        navigationItem.rightBarButtonItem = editButton
+//        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTapped))
+//        navigationItem.rightBarButtonItem = editButton
+//
+//        let deleteButton = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteButtonTapped))
+//        deleteButton.tintColor = UIColor.red
+//        navigationItem.setRightBarButtonItems([deleteButton,editButton], animated: false)
+//
+        if cameFromArchive == false {
+            let moreButton = UIBarButtonItem(title: "More...", style: .plain, target: self, action: #selector(moreButtonTapped))
+            navigationItem.rightBarButtonItem = moreButton
+        }
     }
     
     
-
+    
+    
+    @objc func moreButtonTapped(){
+        let moreDialogueBox = UIAlertController(title: "More", message: "Choose an action", preferredStyle: .actionSheet)
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            print ("Cancel Button Tapped")
+        }
+        let editButton = UIAlertAction(title: "Edit", style: .default) { (action) in
+            self.editButtonTapped()
+        }
+        let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            self.deleteButtonTapped()
+        }
+        let archiveButton = UIAlertAction(title: "Archive", style: .default) { (action) in
+            self.archiveButtonTapped()
+        }
+        
+        
+        moreDialogueBox.addAction(cancelButton)
+        moreDialogueBox.addAction(editButton)
+        moreDialogueBox.addAction(archiveButton)
+        moreDialogueBox.addAction(deleteButton)
+        self.present(moreDialogueBox, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    func archiveButtonTapped(){
+        let customerObject: [String: Any] = [
+            "customer_name": getCustomerName as! NSObject,
+            "instagram_username": getCustomerInstagram as! NSObject,
+            "delivery_date": getDeliveryDate as! NSObject,
+            "cake_type": getCakeType as! NSObject,
+            "cake_size_or_quantity": getCakeSize as! NSObject,
+            "cake_flavour": getCakeFlavour as NSObject,
+            "gift_box_sweet_treats": giftBoxSweetTreatsSwitch.isOn as NSObject,
+            "additional_information": getAdditionalInformation as NSObject,
+            "customer_reference": getCustomerReference as NSObject,
+            "created_at": getCreatedAt as NSObject
+        ]
+        
+        database.child("archive").child("\(getCustomerReference)").setValue(customerObject) {
+            (error:Error?, ref:DatabaseReference) in
+            
+            if let error = error {
+                print("Data failed to archive \(error)")
+            } else {
+                self.removeData()
+                print("Data archived")
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
     
     @objc func editButtonTapped(){
         isInEditMode = true
@@ -80,13 +151,55 @@ class OrderDetailsViewController: UITableViewController {
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTapped))
         navigationItem.rightBarButtonItem = doneButton
         tableView.reloadData()
+    }
+    
+    
+    
+    
+    
+    @objc func deleteButtonTapped(){
+        print("delete button tapped")
+        let deleteDialogueBox = UIAlertController(title: "Delete", message: "Are you sure?", preferredStyle: .alert)
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            print ("Cancel Button Tapped")
+        }
+        let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            print ("Delete Button Tapped")
+            self.removeData()
+        }
         
+        deleteDialogueBox.addAction(cancelButton)
+        deleteDialogueBox.addAction(deleteButton)
+        
+        self.present(deleteDialogueBox, animated: true, completion: nil)
         
     }
+    
+    
+    
+    func removeData(){
+        database.child("orders").child(getCustomerReference).removeValue() {
+            (error:Error?, ref:DatabaseReference) in
+            if let error = error {
+              print("Data could not be deleted: \(error).")
+            } else {
+              print("Data deleted successfully!")
+                
+                self.navigationController?.popViewController(animated: true)
+                
+            }
+        }
+    }
+    
+    
+    
     
     @objc func doneButtonTapped(){
         updateDatabase()
     }
+    
+
+    
     
     
     

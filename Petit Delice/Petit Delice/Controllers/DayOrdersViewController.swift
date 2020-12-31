@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DayOrdersViewControllerDelegate {
-    func goToOrderDetails(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String)
+    func goToOrderDetails(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String, createdAt: String)
 }
 
 class DayOrdersViewController: UIViewController {
@@ -48,12 +48,21 @@ extension DayOrdersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
+        
         let cell = ordersTableView.dequeueReusableCell(withIdentifier: "DayOrdersCell", for: indexPath) as! DayOrdersTableViewCell
         let orders = orderDetails[indexPath.row]
         cell.customerName.text = orders.customerName
         cell.customerInstagram.text = orders.instagramUsername
         cell.customerOrder.text = "\(orders.cakeSizeQuantity)  \(orders.cakeType)"
         cell.deliveryDate.text = orders.deliveryDate
+        
+        //let date = dateFormatter.
+        cell.createdAt.text = orders.createdAt
+            
+        
         
         return cell
     }
@@ -69,7 +78,7 @@ extension DayOrdersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dailyOrder = orderDetails[indexPath.row]
         dismiss(animated: false, completion: nil)
-        delegate?.goToOrderDetails(customerName: dailyOrder.customerName, customerInstagram: dailyOrder.instagramUsername, deliveryDate: dailyOrder.deliveryDate, cakeType: dailyOrder.cakeType, cakeSize: dailyOrder.cakeSizeQuantity, cakeFlavour: dailyOrder.cakeFlavour, giftBoxSweetTreats: dailyOrder.giftBoxSweetTreats, additionalInfo: dailyOrder.additionalInformation, customerReference: dailyOrder.customerReference)
+        delegate?.goToOrderDetails(customerName: dailyOrder.customerName, customerInstagram: dailyOrder.instagramUsername, deliveryDate: dailyOrder.deliveryDate, cakeType: dailyOrder.cakeType, cakeSize: dailyOrder.cakeSizeQuantity, cakeFlavour: dailyOrder.cakeFlavour, giftBoxSweetTreats: dailyOrder.giftBoxSweetTreats, additionalInfo: dailyOrder.additionalInformation, customerReference: dailyOrder.customerReference, createdAt: dailyOrder.createdAt)
     }
     
     

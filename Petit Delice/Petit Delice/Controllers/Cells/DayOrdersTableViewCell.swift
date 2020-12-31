@@ -12,6 +12,7 @@ class DayOrdersTableViewCell: UITableViewCell {
     @IBOutlet weak var deliveryDate: UILabel!
     @IBOutlet weak var customerOrder: UILabel!
     @IBOutlet weak var customerName: UILabel!
+    @IBOutlet weak var createdAt: UILabel!
     
     
     override func awakeFromNib() {
