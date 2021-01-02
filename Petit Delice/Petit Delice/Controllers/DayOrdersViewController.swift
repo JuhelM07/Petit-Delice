@@ -56,11 +56,11 @@ extension DayOrdersViewController: UITableViewDelegate, UITableViewDataSource {
         let orders = orderDetails[indexPath.row]
         cell.customerName.text = orders.customerName
         cell.customerInstagram.text = orders.instagramUsername
-        cell.customerOrder.text = "\(orders.cakeSizeQuantity)  \(orders.cakeType)"
-        cell.deliveryDate.text = orders.deliveryDate
+        cell.customerOrder.text = "\(orders.cakeSizeQuantity) \(orders.cakeType)"
+        cell.deliveryDate.text = "Delivery date: \(orders.deliveryDate)"
         
         //let date = dateFormatter.
-        cell.createdAt.text = orders.createdAt
+        cell.createdAt.text = "Order created at: \(orders.createdAt)"
             
         
         
