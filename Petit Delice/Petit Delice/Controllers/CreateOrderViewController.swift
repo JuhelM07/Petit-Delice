@@ -37,6 +37,13 @@ class CreateOrderViewController: UIViewController {
     let cakeTypePicker = UIPickerView()
     let cakeSizePicker = UIPickerView()
     let cakeFlavourPicker = UIPickerView()
+    let datePicker = UIDatePicker()
+    
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +51,7 @@ class CreateOrderViewController: UIViewController {
             deliveryDateTextField.text = getDateFromMain
         }
         setUpPickerViews()
+        setUpDatePicker()
         
     }
     
@@ -56,10 +64,43 @@ class CreateOrderViewController: UIViewController {
         
         cakeFlavourPicker.delegate = self
         cakeFlavourTextField.inputView = cakeFlavourPicker
-        
-        
     }
     
+    func setUpDatePicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressedOnToolbar))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolbar.setItems([flexibleSpace, doneButton], animated: true)
+        
+        deliveryDateTextField.inputAccessoryView = toolbar
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+            print("iOS < 13.4")
+        }
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        
+        if getDateFromMain != "" {
+            let date = dateFormatter.date(from: deliveryDateTextField.text!)!
+            datePicker.setDate(date, animated: true)
+        }
+        
+        deliveryDateTextField.inputView = datePicker
+        datePicker.datePickerMode = .date
+    }
+    
+    @objc func doneButtonPressedOnToolbar() {
+        deliveryDateTextField.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func dateChanged() {
+        deliveryDateTextField.text = dateFormatter.string(from: datePicker.date)
+    }
     
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -79,7 +120,7 @@ class CreateOrderViewController: UIViewController {
     func addNewOrder(orderString: String) {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
+        dateFormatter.dateFormat = "dd'-'MM'-'yyyy"
         let date = dateFormatter.string(from: Date())
         
         let customerObject: [String: Any] = [

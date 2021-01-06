@@ -50,7 +50,7 @@ extension DayOrdersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
+        dateFormatter.dateFormat = "dd'-'MM'-'yyyy"
         
         let cell = ordersTableView.dequeueReusableCell(withIdentifier: "DayOrdersCell", for: indexPath) as! DayOrdersTableViewCell
         let orders = orderDetails[indexPath.row]
@@ -60,7 +60,7 @@ extension DayOrdersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.deliveryDate.text = "Delivery date: \(orders.deliveryDate)"
         
         //let date = dateFormatter.
-        cell.createdAt.text = "Order created at: \(orders.createdAt)"
+        cell.createdAt.text = "Order placed on: \(orders.createdAt)"
             
         
         

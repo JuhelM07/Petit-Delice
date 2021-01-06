@@ -27,10 +27,12 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     var deadlinesDates = [OrderDetails]()
     var delegate: ViewControllerDelegate?
     
+    @IBOutlet weak var noOrderThisWeekView: UIView!
+    
     
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "dd-MM-yyyy"
         return formatter
     }()
 
@@ -103,12 +105,13 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             }
             self.calculateDeadlines()
             print("Order Array: \(self.orderDetails.count)")
+            
         }
     }
     
     func calculateDeadlines() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
+        dateFormatter.dateFormat = "dd'-'MM'-'yyyy"
         self.deadlinesDates.removeAll()
         
         for order in orderDetails {
@@ -124,11 +127,20 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             }
         }
         deadlinesCollectionView.reloadData()
+        print(deadlinesDates.count)
+        if deadlinesDates.count == 0 {
+            self.deadlinesCollectionView.isHidden = true
+            self.noOrderThisWeekView.isHidden = false
+        } else {
+            self.deadlinesCollectionView.isHidden = false
+            self.noOrderThisWeekView.isHidden = true
+        }
     }
     
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let dateString = self.dateFormatter.string(from: date)
+        print("date string: \(dateString)")
         dateSelected = dateString
         var ordersForDate = [OrderDetails]()
         

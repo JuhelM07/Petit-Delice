@@ -20,6 +20,7 @@ class OrderDetailsViewController: UITableViewController {
     
     @IBOutlet weak var customerNameLabel: UILabel!
     @IBOutlet weak var customerInstagramLabel: UILabel!
+    @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var deliveryDateLabel: UILabel!
     @IBOutlet weak var cakeTypeLabel: UILabel!
     @IBOutlet weak var cakeSizeLabel: UILabel!
@@ -58,7 +59,15 @@ class OrderDetailsViewController: UITableViewController {
     let cakeTypePicker = UIPickerView()
     let cakeSizePicker = UIPickerView()
     let cakeFlavourPicker = UIPickerView()
+    let datePicker = UIDatePicker()
+    
     let database = Database.database().reference()
+    
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        return formatter
+    }()
     
     
     
@@ -68,7 +77,47 @@ class OrderDetailsViewController: UITableViewController {
         setUpTextFieldsForUI()
         setupNavigationBar()
         setUpPickerViews()
+        setUpDatePicker()
+        additionalInfoLabel.sizeToFit()
     }
+    
+    func setUpDatePicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressedOnToolbar))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolbar.setItems([flexibleSpace, doneButton], animated: true)
+        
+        deliveryDateTF.inputAccessoryView = toolbar
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+            print("iOS < 13.4")
+        }
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        
+        if getDeliveryDate != "" {
+            print("De Dt: \(getDeliveryDate)")
+            let date = dateFormatter.date(from: getDeliveryDate)!
+            datePicker.setDate(date, animated: true)
+        }
+        
+        deliveryDateTF.inputView = datePicker
+        datePicker.datePickerMode = .date
+    }
+    
+    @objc func doneButtonPressedOnToolbar() {
+        deliveryDateTF.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func dateChanged() {
+        deliveryDateTF.text = dateFormatter.string(from: datePicker.date)
+    }
+    
     
     func setupNavigationBar(){
 //        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTapped))
@@ -242,6 +291,7 @@ class OrderDetailsViewController: UITableViewController {
     func setUpUIForDetails() {
         customerNameLabel.text = getCustomerName
         customerInstagramLabel.text = getCustomerInstagram
+        createdAtLabel.text = getCreatedAt
         deliveryDateLabel.text = getDeliveryDate
         
         cakeTypeLabel.text = getCakeType
@@ -302,7 +352,7 @@ class OrderDetailsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
+        return 19
     }
     
     
@@ -310,9 +360,9 @@ class OrderDetailsViewController: UITableViewController {
         //0-8
         //9-17
         
-        let isHiddenWhenInEditMode = [0,1,2,3,4,5,6,7,8]
+        let isHiddenWhenInEditMode = [0,1,2,3,4,5,6,7,8,9]
         
-        let isHiddenWhenInViewMode = [9,10,11,12,13,14,15,16,17]
+        let isHiddenWhenInViewMode = [10,11,12,13,14,15,16,17,18]
         
         if isInEditMode == false {
             if isHiddenWhenInViewMode.contains(indexPath.row){
@@ -322,6 +372,8 @@ class OrderDetailsViewController: UITableViewController {
         } else {
             if isHiddenWhenInEditMode.contains(indexPath.row){
                 return 0
+            } else if indexPath.row == 9 {
+                return UITableView.automaticDimension
             }
             
         }

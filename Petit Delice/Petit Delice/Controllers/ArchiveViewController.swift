@@ -14,6 +14,7 @@ class ArchiveViewController: UIViewController {
 
     
     
+    @IBOutlet weak var noArchivedOrdersLabel: UILabel!
     @IBOutlet weak var ordersTableView: UITableView!
     
     
@@ -48,6 +49,15 @@ class ArchiveViewController: UIViewController {
                 }
             }
             ordersTableView.reloadData()
+            
+            if orderDetails.count == 0 {
+                self.ordersTableView.isHidden = true
+                self.noArchivedOrdersLabel.isHidden = false
+            } else {
+                self.ordersTableView.isHidden = false
+                self.noArchivedOrdersLabel.isHidden = true
+            }
+            
             print("Order Array: \(self.orderDetails.count)")
         }
     }
@@ -66,7 +76,7 @@ extension ArchiveViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd"
+        dateFormatter.dateFormat = "dd'-'MM'-'yyyy"
         
         let cell = ordersTableView.dequeueReusableCell(withIdentifier: "archivedOrderCell", for: indexPath) as! DayOrdersTableViewCell
         let orders = orderDetails[indexPath.row]
@@ -76,7 +86,7 @@ extension ArchiveViewController : UITableViewDelegate, UITableViewDataSource{
         cell.deliveryDate.text = "Delivery date: \(orders.deliveryDate)"
         
         //let date = dateFormatter.
-        cell.createdAt.text = "Order created at: \(orders.createdAt)"
+        cell.createdAt.text = "Order placed on: \(orders.createdAt)"
             
         
         return cell
