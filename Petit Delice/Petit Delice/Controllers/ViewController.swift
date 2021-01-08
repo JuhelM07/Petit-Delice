@@ -104,7 +104,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                 }
             }
             self.calculateDeadlines()
-            print("Order Array: \(self.orderDetails.count)")
+            print("Orders: \(self.orderDetails)")
             
         }
     }
@@ -242,6 +242,27 @@ extension Date {
 }
 
 extension ViewController: DayOrdersViewControllerDelegate {
+    func goToOrderDetailsWithImage(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String, createdAt: String, imageURLs: [String]) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let orderDetailsVC = storyBoard.instantiateViewController(withIdentifier: "OrderDetailsViewController") as! OrderDetailsViewController
+        
+        orderDetailsVC.getCustomerName = customerName
+        orderDetailsVC.getCustomerInstagram = customerInstagram
+        orderDetailsVC.getDeliveryDate = deliveryDate
+        orderDetailsVC.getCakeType = cakeType
+        orderDetailsVC.getCakeSize = cakeSize
+        orderDetailsVC.getCakeFlavour = cakeFlavour
+        orderDetailsVC.getGiftBoxSweetTreats = giftBoxSweetTreats
+        orderDetailsVC.getAdditionalInformation = additionalInfo
+        orderDetailsVC.getCustomerReference = customerReference
+        orderDetailsVC.getCreatedAt = createdAt
+        orderDetailsVC.getImages = imageURLs
+        orderDetailsVC.displayImages = true
+        
+        self.navigationController?.pushViewController(orderDetailsVC, animated: true)
+    }
+    
     func goToOrderDetails(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String, createdAt: String) {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -257,6 +278,8 @@ extension ViewController: DayOrdersViewControllerDelegate {
         orderDetailsVC.getAdditionalInformation = additionalInfo
         orderDetailsVC.getCustomerReference = customerReference
         orderDetailsVC.getCreatedAt = createdAt
+        orderDetailsVC.displayImages = false
+        //orderDetailsVC.getImages = imageURLs
         
         self.navigationController?.pushViewController(orderDetailsVC, animated: true)
     }

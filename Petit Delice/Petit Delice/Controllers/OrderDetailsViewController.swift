@@ -9,6 +9,8 @@ import UIKit
 import MaterialTextField
 import Firebase
 import FirebaseDatabase
+import SDWebImage
+import QuartzCore
 
 
 class OrderDetailsViewController: UITableViewController {
@@ -37,7 +39,7 @@ class OrderDetailsViewController: UITableViewController {
     @IBOutlet weak var cakeFlavourTF: MFTextField!
     @IBOutlet weak var giftBoxSweetTreatsSwitch: UISwitch!
     @IBOutlet weak var additionalInfoTextView: UITextView!
-    
+    @IBOutlet weak var imagesCollectionView: UICollectionView!
     
     
     var getCustomerName = String()
@@ -50,6 +52,8 @@ class OrderDetailsViewController: UITableViewController {
     var getAdditionalInformation = String()
     var getCustomerReference = String()
     var getCreatedAt = String()
+    var getImages = [String]()
+    var displayImages = Bool()
     
     
     var isInEditMode = false
@@ -78,6 +82,7 @@ class OrderDetailsViewController: UITableViewController {
         setupNavigationBar()
         setUpPickerViews()
         setUpDatePicker()
+        setUpCollectionView()
         additionalInfoLabel.sizeToFit()
     }
     
@@ -186,7 +191,6 @@ class OrderDetailsViewController: UITableViewController {
                 print("Data archived")
             }
             
-            
         }
         
         
@@ -199,7 +203,16 @@ class OrderDetailsViewController: UITableViewController {
         navigationItem.rightBarButtonItem = nil
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTapped))
         navigationItem.rightBarButtonItem = doneButton
-        tableView.reloadData()
+        
+        
+        UIView.transition(with: tableView,
+                          duration: 0.15,
+                          options: .transitionCrossDissolve,
+                          animations: { self.tableView.reloadData() })
+        
+        
+        //tableView.reloadData()
+        
     }
     
     
@@ -313,6 +326,17 @@ class OrderDetailsViewController: UITableViewController {
         
     }
     
+    func setUpCollectionView() {
+        let imagesLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        imagesLayout.itemSize = CGSize(width: 128, height: 128)
+        imagesLayout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        imagesLayout.minimumInteritemSpacing = 5.0
+        imagesLayout.minimumLineSpacing = 10.0
+        imagesLayout.scrollDirection = .horizontal
+        
+        imagesCollectionView.collectionViewLayout = imagesLayout
+    }
+    
     
     func updateDatabase (){
      //   guard let key = database.child("orders").child(getCustomerReference) else { return }
@@ -352,7 +376,7 @@ class OrderDetailsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 19
+        return 20
     }
     
     
@@ -360,19 +384,26 @@ class OrderDetailsViewController: UITableViewController {
         //0-8
         //9-17
         
-        let isHiddenWhenInEditMode = [0,1,2,3,4,5,6,7,8,9]
+        let isHiddenWhenInEditMode = [0,1,2,3,4,5,6,7,8,9,10]
         
-        let isHiddenWhenInViewMode = [10,11,12,13,14,15,16,17,18]
+        let isHiddenWhenInViewMode = [11,12,13,14,15,16,17,18,19]
         
         if isInEditMode == false {
+            
+            
+            
             if isHiddenWhenInViewMode.contains(indexPath.row){
                 return 0
+            } else if indexPath.row == 9 {
+                if displayImages == false {
+                    return 0
+                }
             }
             
         } else {
             if isHiddenWhenInEditMode.contains(indexPath.row){
                 return 0
-            } else if indexPath.row == 9 {
+            } else if indexPath.row == 10 {
                 return UITableView.automaticDimension
             }
             
@@ -428,4 +459,25 @@ extension OrderDetailsViewController: UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     
+}
+
+extension OrderDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        getImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: "imagesCell", for: indexPath) as! UploadedImagesCollectionViewCell
+        
+        cell.layer.shadowRadius = 5.0
+        cell.layer.shadowOpacity = 0.2
+        cell.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.layer.masksToBounds = false
+        
+        let imageURL = getImages[indexPath.row]
+        cell.imageView.sd_setImage(with: URL(string: imageURL), completed: nil)
+        return cell
+    }
 }

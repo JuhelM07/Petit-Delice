@@ -10,6 +10,9 @@ target 'Petit Delice' do
   pod 'CodableFirebase'
   pod 'IQKeyboardManager', '~> 6.5'
   pod 'Pulley', '~> 2.9'
+  pod 'Firebase/Storage'
+  pod 'SDWebImage'
+  pod 'JGProgressHUD'
   
 
 end

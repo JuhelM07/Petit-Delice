@@ -64,5 +64,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access to upload photos</string>
 </dict>
 </plist>

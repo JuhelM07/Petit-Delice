@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		258151AE25A8F10F00FC93C6 /* UploadedImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258151AD25A8F10F00FC93C6 /* UploadedImagesCollectionViewCell.swift */; };
 		2588C3BF259505C100923C81 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C3BE259505C100923C81 /* Order.swift */; };
 		2588C3FD2595424100923C81 /* DeadlinesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */; };
 		2588C41325956DA000923C81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2588C41225956DA000923C81 /* GoogleService-Info.plist */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		258151AD25A8F10F00FC93C6 /* UploadedImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		2588C3BE259505C100923C81 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinesCollectionViewCell.swift; sourceTree = "<group>"; };
 		2588C41225956DA000923C81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -93,6 +95,7 @@
 			children = (
 				2588C3FC2595424100923C81 /* DeadlinesCollectionViewCell.swift */,
 				C528ADFC259912A50074072C /* DayOrdersTableViewCell.swift */,
+				258151AD25A8F10F00FC93C6 /* UploadedImagesCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258151AE25A8F10F00FC93C6 /* UploadedImagesCollectionViewCell.swift in Sources */,
 				25A17D7B2594D1180084E3DE /* ViewController.swift in Sources */,
 				25A17DB92594ED170084E3DE /* CreateOrderViewController.swift in Sources */,
 				2588C420259B6DC500923C81 /* OrderDetailsViewController.swift in Sources */,

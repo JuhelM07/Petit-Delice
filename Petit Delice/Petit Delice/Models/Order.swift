@@ -19,6 +19,7 @@ struct OrderDetails: Codable {
     let cakeSizeQuantity: String
     let cakeFlavour: String
     let giftBoxSweetTreats: Bool
+    let images: [String]?
     let additionalInformation: String
     let customerReference: String
     let createdAt: String
@@ -32,6 +33,7 @@ struct OrderDetails: Codable {
             let cakeSizeQuantity = data["cake_size_or_quantity"] as? String,
             let cakeFlavour = data["cake_flavour"] as? String,
             let giftBoxSweetTreats = data["gift_box_sweet_treats"] as? Bool,
+            let images = data["images"] as? [String],
             let additionalInformation = data["additional_information"] as? String,
             let customerReference = data["customer_reference"] as? String,
             let createdAt = data["created_at"] as? String else {
@@ -46,6 +48,7 @@ struct OrderDetails: Codable {
         self.cakeSizeQuantity = cakeSizeQuantity
         self.cakeFlavour = cakeFlavour
         self.giftBoxSweetTreats = giftBoxSweetTreats
+        self.images = images
         self.additionalInformation = additionalInformation
         self.customerReference = customerReference
         self.createdAt = createdAt
@@ -59,6 +62,7 @@ struct OrderDetails: Codable {
         case cakeSizeQuantity = "cake_size_or_quantity"
         case cakeFlavour = "cake_flavour"
         case giftBoxSweetTreats = "gift_box_sweet_treats"
+        case images = "images"
         case additionalInformation = "additional_information"
         case customerReference = "customer_reference"
         case createdAt = "created_at"

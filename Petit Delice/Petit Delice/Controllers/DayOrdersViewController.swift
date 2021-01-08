@@ -8,6 +8,8 @@
 import UIKit
 
 protocol DayOrdersViewControllerDelegate {
+    func goToOrderDetailsWithImage(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String, createdAt: String, imageURLs: [String])
+    
     func goToOrderDetails(customerName: String, customerInstagram: String, deliveryDate: String, cakeType: String, cakeSize: String, cakeFlavour: String, giftBoxSweetTreats: Bool, additionalInfo: String, customerReference: String, createdAt: String)
 }
 
@@ -78,7 +80,16 @@ extension DayOrdersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dailyOrder = orderDetails[indexPath.row]
         dismiss(animated: false, completion: nil)
-        delegate?.goToOrderDetails(customerName: dailyOrder.customerName, customerInstagram: dailyOrder.instagramUsername, deliveryDate: dailyOrder.deliveryDate, cakeType: dailyOrder.cakeType, cakeSize: dailyOrder.cakeSizeQuantity, cakeFlavour: dailyOrder.cakeFlavour, giftBoxSweetTreats: dailyOrder.giftBoxSweetTreats, additionalInfo: dailyOrder.additionalInformation, customerReference: dailyOrder.customerReference, createdAt: dailyOrder.createdAt)
+        
+        
+        if dailyOrder.images == nil {
+            delegate?.goToOrderDetails(customerName: dailyOrder.customerName, customerInstagram: dailyOrder.instagramUsername, deliveryDate: dailyOrder.deliveryDate, cakeType: dailyOrder.cakeType, cakeSize: dailyOrder.cakeSizeQuantity, cakeFlavour: dailyOrder.cakeFlavour, giftBoxSweetTreats: dailyOrder.giftBoxSweetTreats, additionalInfo: dailyOrder.additionalInformation, customerReference: dailyOrder.customerReference, createdAt: dailyOrder.createdAt)
+        } else {
+            delegate?.goToOrderDetailsWithImage(customerName: dailyOrder.customerName, customerInstagram: dailyOrder.instagramUsername, deliveryDate: dailyOrder.deliveryDate, cakeType: dailyOrder.cakeType, cakeSize: dailyOrder.cakeSizeQuantity, cakeFlavour: dailyOrder.cakeFlavour, giftBoxSweetTreats: dailyOrder.giftBoxSweetTreats, additionalInfo: dailyOrder.additionalInformation, customerReference: dailyOrder.customerReference, createdAt: dailyOrder.createdAt, imageURLs: dailyOrder.images!)
+        }
+        
+        
+
     }
     
     
